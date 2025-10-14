@@ -15,5 +15,6 @@ See instructions. Delete this line and place a link to the user stories here.
 See instructions. Delete this line and place instructions to download, configure, and run the software here.
 
 ## Task boards
+Sprint 1: https://github.com/orgs/swe-students-fall2025/projects/28
 
-See instructions. Delete this line and place a link to the task boards here.
+Sprint 2: https://github.com/orgs/swe-students-fall2025/projects/29
