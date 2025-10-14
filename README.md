@@ -4,7 +4,8 @@ A little exercise to build a web application following an agile development proc
 
 ## Product vision statement
 
-See instructions. Delete this line and place the Product Vision Statement here.
+Our app is a trusted second-hand marketplace exclusively for students, where verified student accounts can safely buy, sell, and exchange items within their campus community — saving money, earning cash, and supporting sustainability.
+
 
 ## User stories
 
