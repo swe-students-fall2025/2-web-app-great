@@ -9,7 +9,7 @@ Our app is a trusted second-hand marketplace exclusively for students, where ver
 
 ## User stories
 
-See instructions. Delete this line and place a link to the user stories here.
+This is the link to the user stories: https://github.com/swe-students-fall2025/2-web-app-great/issues
 
 ## Steps necessary to run the software
 
