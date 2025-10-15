@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout - LoopU</title>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<header class="header"><h1>Checkout</h1></header>
+
+<main class="container">
+  <section class="card" style="padding:10px">
+    <h3 class="title" style="margin-bottom:8px">Order Summary</h3>
+    <div class="line"><span>IKEA study table</span><span>$ 20</span></div>
+    <div class="line"><span>Qty</span><span>1</span></div>
+    <div class="line total"><span>Total</span><span>$ 20</span></div>
+  </section>
+
+  <form class="form" action="#" method="post" style="margin-top:12px">
+    <div>
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" required>
+    </div>
+    <div>
+      <label>Campus / Pickup Location</label>
+      <input type="text" placeholder="e.g., NYU Library" required>
+    </div>
+    <div>
+      <label>Contact Email</label>
+      <input type="email" placeholder="you@school.edu" required>
+    </div>
+    <div>
+      <label>Payment Method</label>
+      <select required>
+        <option>Cash on pickup</option>
+        <option>Bank transfer</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <button class="btn" type="submit">Place Order</button>
+  </form>
+</main>
+
+<nav class="nav">
+  <a href="./index.html">Home</a>
+  <a href="./my_listing.html">My listing</a>
+  <a href="./publish.html">Publish</a>
+  <a href="./cart.html">Cart</a>
+  <a href="./login.html">Login</a>
+</nav>
+</body>
+</html>
