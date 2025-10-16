@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="header"><h1>Login</h1></header>
+
+<main class="container">
+  <form class="form" action="{{ url_for('main.login') }}" method="post">
+    <div>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@school.edu" required>
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name="password" placeholder="••••••••" required>
+    </div>
+    <button class="btn" type="submit">Login</button>
+    <p class="meta">Don't have an account? 
+      <a href="{{ url_for('main.signup') }}">Go register</a>
+    </p>
+  </form>
+</main>
+
+<nav class="nav">
+  <a href="{{ url_for('main.index') }}">Home</a>
+  <a href="{{ url_for('main.items_list') }}">My listing</a>
+  <a href="{{ url_for('main.items_add') }}">Publish</a>
+  <a href="{{ url_for('main.cart') }}">Cart</a>
+  <a class="active" href="{{ url_for('main.login') }}">Login</a>
+</nav>
+{% endblock %}
