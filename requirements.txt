@@ -1,0 +1,5 @@
+Flask==3.0.3
+pymongo==4.9.1
+python-dotenv==1.0.1
+WTForms==3.2.1
+email-validator==2.2.0
