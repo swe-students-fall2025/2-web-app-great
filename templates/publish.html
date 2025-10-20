@@ -1,44 +1,12 @@
 {% extends 'base.html' %}
-
 {% block content %}
-  <header class="header"><h1>Product Publish</h1></header>
-
-  <main class="container">
-    <form class="form" action="{{ url_for('main.items_add') }}" method="post">
-      <div>
-        <label>Title</label>
-        <input type="text" name="title" placeholder="ex: bookname" required>
-      </div>
-      <div>
-        <label>Price</label>
-        <input type="number" step="0.01" name="price" placeholder="ex: 35" required>
-      </div>
-      <div>
-        <label>Types</label>
-        <select name="category">
-          <option>Books</option>
-          <option>Electronics</option>
-          <option>Furniture</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div>
-        <label>School</label>
-        <input type="text" name="school" placeholder="ex：NYU">
-      </div>
-      <div>
-        <label>Description</label>
-        <textarea rows="5" name="description" placeholder="Condition, usage, transaction method..."></textarea>
-      </div>
-      <button class="btn" type="submit">Publish</button>
-    </form>
-  </main>
-
-  <nav class="nav">
-    <a href="{{ url_for('main.index') }}">Home</a>
-    <a href="{{ url_for('main.items_list') }}">My listing</a>
-    <a class="active" href="{{ url_for('main.items_add') }}">Publish</a>
-    <a href="{{ url_for('main.cart') }}">Cart</a>
-    <a href="{{ url_for('main.login') }}">Login</a>
-  </nav>
+<h2>Publish Item</h2>
+<form method="post" class="form">
+  <label>Title</label><input type="text" name="title" required>
+  <label>Price</label><input type="number" step="0.01" name="price" required>
+  <label>Category</label><input type="text" name="category">
+  <label>School</label><input type="text" name="school">
+  <label>Description</label><textarea name="desc" rows="4"></textarea>
+  <button class="btn" type="submit">Publish</button>
+</form>
 {% endblock %}

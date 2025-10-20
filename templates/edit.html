@@ -1,49 +1,12 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<header class="header"><h1>Edit Publish</h1></header>
-
-<main class="container">
-  <form class="form" action="{{ url_for('main.items_edit', item_id=item._id) }}" method="post">
-    <div>
-      <label>Title</label>
-      <input type="text" name="title" value="{{ item.title }}" required>
-    </div>
-    <div>
-      <label>Price</label>
-      <input type="number" step="0.01" name="price" value="{{ item.price }}" required>
-    </div>
-    <div>
-      <label>Types</label>
-      <select name="category">
-        <option {% if item.category == 'Furniture' %}selected{% endif %}>Furniture</option>
-        <option {% if item.category == 'Books' %}selected{% endif %}>Books</option>
-        <option {% if item.category == 'Electronics' %}selected{% endif %}>Electronics</option>
-        <option {% if item.category == 'Other' %}selected{% endif %}>Other</option>
-      </select>
-    </div>
-    <div>
-      <label>School</label>
-      <input type="text" name="school" value="{{ item.school }}">
-    </div>
-    <div>
-      <label>Description</label>
-      <textarea rows="5" name="description">{{ item.description }}</textarea>
-    </div>
-    <div class="form-actions">
-      <button class="btn" type="submit">Save Edition</button>
-      <a class="btn btn-danger" href="{{ url_for('main.items_delete', item_id=item._id) }}">Delete</a>
-    </div>
-  </form>
-</main>
-
-<nav class="nav">
-  <a href="{{ url_for('main.index') }}">Home</a>
-  <a href="{{ url_for('main.items_list') }}">My listing</a>
-  <a href="{{ url_for('main.items_add') }}">Publish</a>
-  <a href="{{ url_for('main.cart') }}">Cart</a>
-  <a href="{{ url_for('main.login') }}">Login</a>
-</nav>
+<h2>Edit Item</h2>
+<form method="post" class="form">
+  <label>Title</label><input type="text" name="title" value="{{ item.title }}" required>
+  <label>Price</label><input type="number" step="0.01" name="price" value="{{ '%.2f'|format(item.price or 0) }}" required>
+  <label>Category</label><input type="text" name="category" value="{{ item.category }}">
+  <label>School</label><input type="text" name="school" value="{{ item.school }}">
+  <label>Description</label><textarea name="desc" rows="4">{{ item.desc }}</textarea>
+  <button class="btn" type="submit">Save</button>
+</form>
 {% endblock %}
-
-    
