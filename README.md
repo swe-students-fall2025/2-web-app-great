@@ -18,9 +18,9 @@ This is the link to the Issues page: https://github.com/swe-students-fall2025/2-
 
 2. Create and activate a virtual environment
 
-python3 -m venv venv
+  python3 -m venv venv
 
-if macOS / Linux：
+  if macOS / Linux：
 
 source venv/bin/activate
 
