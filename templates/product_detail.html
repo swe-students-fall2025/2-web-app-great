@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="card">
+  <h2>{{ item.title }}</h2>
+  <p class="price">${{ '%.2f'|format(item.price or 0) }}</p>
+  {% if item.school or item.category %}
+  <p class="meta">{{ item.school or '' }} {{ "· " ~ item.category if item.category else "" }}</p>
+  {% endif %}
+  {% if item.desc %}<p class="desc">{{ item.desc }}</p>{% endif %}
+  <div class="row-btns">
+    <a href="{{ url_for('main.contact', item_id=item._id) }}" class="btn">Contact Seller</a>
+  </div>
+</article>
+{% endblock %}
