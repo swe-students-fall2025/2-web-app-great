@@ -51,10 +51,10 @@ SECRET_KEY="your_secret_key_here"
 
    1. Create a config file (for example, `mongod.conf`):
 
-      # macOS / Linux
+      macOS / Linux
       nano mongod.conf
 
-      # Windows (PowerShell)
+      Windows (PowerShell)
       notepad mongod.conf
 
    2. Paste the following minimal configuration into the file:
