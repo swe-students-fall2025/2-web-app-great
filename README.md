@@ -46,3 +46,5 @@ start http://127.0.0.1:5000   # Windows
 Sprint 1: https://github.com/orgs/swe-students-fall2025/projects/28
 
 Sprint 2: https://github.com/orgs/swe-students-fall2025/projects/29
+
+User Story Status Board: https://github.com/orgs/swe-students-fall2025/projects/56
