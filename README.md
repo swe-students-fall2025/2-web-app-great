@@ -60,14 +60,14 @@ python app.py
 
 Expected output:
 
-Running on http://127.0.0.1:5001
+Running on http://127.0.0.1:5050
 
 
 7. Open the app in your browser
 
-open http://127.0.0.1:5001    # macOS
+open http://127.0.0.1:5050    # macOS
 
-start http://127.0.0.1:5001   # Windows
+start http://127.0.0.1:5050   # Windows
 
 
 8. Front-end testing tip
