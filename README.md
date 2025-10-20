@@ -78,23 +78,23 @@ This is the link to the Issues page: https://github.com/swe-students-fall2025/2-
 
 6. Run the Flask application
 
-python app.py
+    python app.py
 
-Expected output:
+    Expected output:
 
-Running on http://127.0.0.1:5050
+    Running on http://127.0.0.1:5050
 
 
 7. Open the app in your browser
 
-open http://127.0.0.1:5050    # macOS
+    open http://127.0.0.1:5050    # macOS
 
-start http://127.0.0.1:5050   # Windows
+    start http://127.0.0.1:5050   # Windows
 
 
 8. Front-end testing tip
 
-Should view with inspect on 14 Pro Max mobile viewport
+    Should view with inspect on 14 Pro Max mobile viewport
 
 
 
