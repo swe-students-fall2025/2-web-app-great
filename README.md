@@ -13,9 +13,7 @@ This is the link to the Issues page: https://github.com/swe-students-fall2025/2-
 
 ## Steps necessary to run the software
 1
-unzip LoopU_Final_Complete.zip
-
-cd LoopU_Final_Complete
+clone this git Repository into VScode
 
 
 2
