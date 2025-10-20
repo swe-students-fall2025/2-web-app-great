@@ -31,18 +31,18 @@ This is the link to the Issues page: https://github.com/swe-students-fall2025/2-
 
 3. Install dependencies
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 4. Configure environment variables
 
-cp env.example .env
+    cp env.example .env
 
-Edit .env if needed. Example:
+    Edit .env if needed. Example:
 
-MONGO_URI="mongodb://localhost:27017/loopu"
+    MONGO_URI="mongodb://localhost:27017/loopu"
 
-SECRET_KEY="your_secret_key_here"
+    SECRET_KEY="your_secret_key_here"
 
 
 5. Start MongoDB
