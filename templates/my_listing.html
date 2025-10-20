@@ -1,20 +1,40 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<h2>My Listings</h2>
-{% if items %}
-  {% for item in items %}
-  <article class="card">
-    <h3>{{ item.title }}</h3>
-    <p class="price">${{ '%.2f'|format(item.price or 0) }}</p>
-    <div class="row-btns">
-      <a class="btn" href="{{ url_for('main.edit', item_id=item._id) }}">Edit</a>
-      <form method="post" action="{{ url_for('main.delete', item_id=item._id) }}" style="display:inline;">
-        <button class="btn btn-danger" type="submit">Delete</button>
-      </form>
-    </div>
-  </article>
-  {% endfor %}
-{% else %}
-<p style="color:#888;">No items yet. <a href="{{ url_for('main.publish') }}">Publish one</a>.</p>
-{% endif %}
+<header class="header"><h1>My listing</h1></header>
+
+<main class="container">
+  <section class="grid">
+    {% if items %}
+      {% for it in items %}
+      <article class="card">
+        <a href="{{ url_for('main.item_detail', item_id=it._id) }}">
+          <div class="thumb">
+            <img src="{{ it.image_url or url_for('static', filename='img/placeholder.jpg') }}" alt="item">
+          </div>
+          <div class="body">
+            <h3 class="title">{{ it.title }}</h3>
+            <div class="price">$ {{ '%.2f'|format(it.price or 0) }}</div>
+            <div class="meta">Condition: {{ it.condition or '—' }}</div>
+            <div class="form-actions">
+              <a class="btn btn-outline" href="{{ url_for('main.items_edit', item_id=it._id) }}">Edit</a>
+              <a class="btn btn-danger" href="{{ url_for('main.items_delete', item_id=it._id) }}">Delete</a>
+            </div>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    {% else %}
+      <p>You haven’t posted anything yet. <a href="{{ url_for('main.items_add') }}">Publish one</a>.</p>
+    {% endif %}
+  </section>
+</main>
+
+<nav class="nav">
+  <a href="{{ url_for('main.index') }}">Home</a>
+  <a class="active" href="{{ url_for('main.my_listing') }}">My listing</a>
+  <a href="{{ url_for('main.items_add') }}">Publish</a>
+  <a href="{{ url_for('main.cart') }}">Cart</a>
+  <a href="{{ url_for('main.login') }}">Login</a>
+</nav>
 {% endblock %}

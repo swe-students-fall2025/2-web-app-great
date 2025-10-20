@@ -1,14 +1,39 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<article class="card">
-  <h2>{{ item.title }}</h2>
-  <p class="price">${{ '%.2f'|format(item.price or 0) }}</p>
-  {% if item.school or item.category %}
-  <p class="meta">{{ item.school or '' }} {{ "· " ~ item.category if item.category else "" }}</p>
-  {% endif %}
-  {% if item.desc %}<p class="desc">{{ item.desc }}</p>{% endif %}
-  <div class="row-btns">
-    <a href="{{ url_for('main.contact', item_id=item._id) }}" class="btn">Contact Seller</a>
+<header class="header"><h1>Product Detail</h1></header>
+
+<main class="container">
+  <div class="card">
+    <div class="thumb">
+      <img src="{{ item.image_url or url_for('static', filename='img/placeholder.jpg') }}" alt="item">
+    </div>
+    <div class="body">
+      <h2 class="title">{{ item.title }}</h2>
+      <div class="price">$ {{ '%.2f'|format(item.price or 0) }}</div>
+      <div class="meta">
+        {{ item.school or 'Unknown school' }} · {{ item.category or 'Uncategorized' }} 
+        · post date: {{ item.post_date or '' }}
+      </div>
+      <p style="margin-top:8px;color:#333;line-height:1.5">
+        {{ item.description }}
+      </p>
+    </div>
   </div>
-</article>
+
+  <div style="display:flex;gap:10px;margin-top:12px">
+    <a class="btn" href="{{ url_for('main.contact') }}">Contact</a>
+    <a class="btn" href="{{ url_for('main.cart') }}">Add to Cart</a>
+    <a class="btn btn-warning" href="{{ url_for('main.checkout') }}">Buy Now</a>
+  </div>
+</main>
+
+<nav class="nav">
+  <a href="{{ url_for('main.index') }}">Home</a>
+  <a href="{{ url_for('main.my_listing') }}">My listing</a>
+  <a href="{{ url_for('main.items_add') }}">Publish</a>
+  <a href="{{ url_for('main.cart') }}">Cart</a>
+  <a href="{{ url_for('main.login') }}">Login</a>
+</nav>
 {% endblock %}
+
