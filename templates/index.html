@@ -1,24 +1,56 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<form class="search-bar" action="{{ url_for('main.search') }}" method="get">
-  <input type="search" name="q" placeholder="Search items...">
-  <button class="btn" type="submit">Search</button>
-</form>
-{% if items %}
-<section class="grid">
-  {% for item in items %}
-  <article class="card">
-    <h3 class="title"><a href="{{ url_for('main.product_detail', item_id=item._id) }}">{{ item.title }}</a></h3>
-    <p class="price">${{ '%.2f'|format(item.price or 0) }}</p>
-    <p class="meta">{{ item.school or '' }} {{ "· " ~ item.category if item.category else "" }}</p>
-    <div class="row-btns">
-      <a href="{{ url_for('main.product_detail', item_id=item._id) }}" class="btn">Details</a>
-      <a href="{{ url_for('main.contact', item_id=item._id) }}" class="btn">Contact Seller</a>
+  <header class="header">
+    <div class="back-btn"></div>
+    <a href="{{ url_for('main.index') }}" class="brand">LoopU</a>
+    <!-- Login 链接要跳到 login 路由 -->
+    <a href="{{ url_for('main.login') }}" class="login-link">Login</a>
+    <div class="intro">
+      <p>LoopU is a student marketplace for buying and selling second-hand items safely and sustainably within your campus community.</p>
     </div>
-  </article>
-  {% endfor %}
-</section>
-{% else %}
-<p style="text-align:center;color:#888;">No items yet. Be the first to <a href="{{ url_for('main.publish') }}">publish</a>!</p>
-{% endif %}
+  </header>
+
+  <main class="container">
+    <form class="search-bar" action="{{ url_for('main.index') }}">
+      <input type="search" placeholder="Search: textbooks, furniture, electronics…" />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="quick-row">
+      <a class="quick" href="#">Electronics</a>
+      <a class="quick" href="#">Books</a>
+      <a class="quick" href="#">Furniture</a>
+      <a class="quick" href="#">Beauty</a>
+      <a class="quick" href="#">Sports</a>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <img src="{{ url_for('static', filename='img/book.png') }}" class="card-img-top" alt="Software engineering books">
+        <div class="card-body">
+          <h5 class="card-title">Software engineering books</h5>
+          <!-- 详情页应该跳到某个商品详情 -->
+          <a href="{{ url_for('main.item_detail', item_id='some_id') }}" class="btn">Details</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="{{ url_for('static', filename='img/table.png') }}" class="card-img-top" alt="Ikea study table">
+        <div class="card-body">
+          <h5 class="card-title">Ikea study table</h5>
+          <p class="price">$ 20</p>
+          <a href="{{ url_for('main.item_detail', item_id='some_id') }}" class="btn">Details</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <nav class="nav">
+    <a class="active" href="{{ url_for('main.index') }}">Home</a>
+    <a href="{{ url_for('main.my_listing') }}">My listing</a>
+    <a href="{{ url_for('main.items_add') }}">Publish</a>
+    <a href="{{ url_for('main.cart') }}">Cart</a>
+    <a href="{{ url_for('main.login') }}">Login</a>
+  </nav>
 {% endblock %}
